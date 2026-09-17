@@ -1,0 +1,1042 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mais Vendas na Kiwify — Guia prático para criar, divulgar e vender produtos digitais.">
+<title>Mais Vendas na Kiwify | Guia Prático</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg: #050807;
+  --bg2: #0b1511;
+  --card: #101c16;
+  --green: #27f078;
+  --green2: #0ec95c;
+  --text: #f5fff8;
+  --muted: #9aaea1;
+  --border: rgba(39,240,120,.16);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(5,8,7,.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--green);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  color: #c2d0c6;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: var(--green);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--green);
+  color: #031008;
+  padding: 15px 25px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 800;
+  border: 1px solid var(--green);
+  transition: .25s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #6aff9d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 35px rgba(39,240,120,.18);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(255,255,255,.2);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+}
+
+.hero {
+  position: relative;
+  padding: 85px 0 100px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  right: -250px;
+  top: -200px;
+  background: rgba(0,180,75,.12);
+  filter: blur(110px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--green);
+  background: rgba(39,240,120,.07);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.tag::before {
+  content: "✦";
+}
+
+h1 {
+  font-size: clamp(38px, 4.5vw, 66px);
+  line-height: 1.06;
+  letter-spacing: -2.8px;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+
+h1 span {
+  color: var(--green);
+}
+
+.hero-text {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 510px;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: #a8b9ad;
+  font-size: 12px;
+}
+
+.trust strong {
+  color: white;
+}
+
+.cover-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.cover-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 5% 10%;
+  background: rgba(39,240,120,.12);
+  filter: blur(70px);
+  border-radius: 50%;
+}
+
+.cover {
+  width: min(100%, 410px);
+  position: relative;
+  border-radius: 7px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.65),
+              0 0 50px rgba(39,240,120,.08);
+  transform: rotate(2deg);
+  transition: .4s;
+}
+
+.cover:hover {
+  transform: rotate(0deg) translateY(-5px);
+}
+
+.cover-note {
+  position: absolute;
+  bottom: -18px;
+  right: 0;
+  background: #11251a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 13px 18px;
+  font-size: 12px;
+  color: #c9dace;
+  box-shadow: 0 15px 40px #0008;
+}
+
+.cover-note strong {
+  color: var(--green);
+}
+
+section {
+  padding: 95px 0;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 670px;
+  margin: 0 auto 50px;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+h2 {
+  font-size: clamp(29px, 3.5vw, 45px);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin-bottom: 17px;
+}
+
+.section-head p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.benefits {
+  background: linear-gradient(180deg, #07100b, #050807);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(145deg, #112019, #0a120e);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 30px;
+  transition: .25s;
+}
+
+.card:hover {
+  border-color: rgba(39,240,120,.45);
+  transform: translateY(-4px);
+}
+
+.icon {
+  width: 47px;
+  height: 47px;
+  border-radius: 12px;
+  background: rgba(39,240,120,.09);
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  margin-bottom: 22px;
+  border: 1px solid var(--border);
+}
+
+.card h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.learn-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.learn-copy p {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.check-list {
+  list-style: none;
+  display: grid;
+  gap: 16px;
+}
+
+.check-list li {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  color: #d7e5db;
+  font-size: 14px;
+}
+
+.check-list li::before {
+  content: "✓";
+  color: #06150b;
+  background: var(--green);
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.modules {
+  display: grid;
+  gap: 12px;
+}
+
+.module {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 19px;
+  background: #0d1711;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.module-number {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--green);
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.module strong {
+  display: block;
+  font-size: 14px;
+}
+
+.module small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.offer {
+  background: radial-gradient(ellipse at 50% 0%, #123e26, #07100b 60%, #050807);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.offer-box {
+  max-width: 680px;
+  margin: auto;
+  text-align: center;
+  background: rgba(10,24,15,.82);
+  border: 1px solid rgba(39,240,120,.28);
+  border-radius: 22px;
+  padding: 48px 30px;
+  box-shadow: 0 0 70px rgba(39,240,120,.05);
+}
+
+.offer-box h2 {
+  font-size: clamp(28px,4vw,42px);
+}
+
+.offer-description {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.price-label {
+  font-size: 12px;
+  color: #b0c4b5;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: var(--green);
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+.price small {
+  font-size: 15px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.price-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.offer .btn {
+  width: 100%;
+  max-width: 420px;
+  padding: 19px;
+  font-size: 15px;
+}
+
+.secure {
+  font-size: 11px;
+  color: #8ba294;
+  margin-top: 15px;
+}
+
+.faq {
+  max-width: 780px;
+  margin: auto;
+}
+
+details {
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  margin-bottom: 12px;
+  background: #0b140f;
+}
+
+summary {
+  cursor: pointer;
+  padding: 21px;
+  font-size: 14px;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+summary::after {
+  content: "+";
+  color: var(--green);
+  font-size: 20px;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+details p {
+  color: var(--muted);
+  font-size: 14px;
+  padding: 0 21px 21px;
+}
+
+footer {
+  padding: 45px 0 25px;
+  border-top: 1px solid var(--border);
+  background: #030504;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.footer-top p {
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 350px;
+  margin-top: 8px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+  font-size: 13px;
+  color: #b5c8ba;
+}
+
+.footer-links a:hover {
+  color: var(--green);
+}
+
+.copyright {
+  border-top: 1px solid #142119;
+  padding-top: 22px;
+  color: #6e8375;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 850px) {
+  .hero-grid,
+  .learn-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .hero {
+    padding: 60px 0 80px;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions,
+  .trust {
+    justify-content: center;
+  }
+
+  .cover {
+    max-width: 340px;
+  }
+
+  .cover-note {
+    right: 2%;
+  }
+
+  .benefit-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .learn-copy {
+    text-align: center;
+  }
+
+  .learn-copy .check-list {
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav {
+    height: 65px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav .btn {
+    padding: 11px 15px;
+    font-size: 11px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  h1 {
+    font-size: 39px;
+    letter-spacing: -1.7px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  .offer-box {
+    padding: 35px 20px;
+  }
+
+  .price {
+    font-size: 47px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">MAIS VENDAS <span>●</span></a>
+
+    <nav class="nav-links">
+      <a href="#beneficios">Benefícios</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+
+    <a href="https://pay.kiwify.com.br/AB78Kyc"
+       target="_blank"
+       rel="noopener"
+       class="btn">
+      Quero meu ebook →
+    </a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-copy">
+      <div class="tag">Guia prático para iniciantes</div>
+
+      <h1>
+        Crie, divulgue e venda
+        <span>produtos digitais.</span>
+      </h1>
+
+      <p class="hero-text">
+        Descubra estratégias práticas para começar no digital,
+        encontrar oportunidades, criar conteúdos e divulgar
+        seus produtos com mais clareza e estratégia.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://pay.kiwify.com.br/AB78Kyc"
+           target="_blank"
+           rel="noopener"
+           class="btn">
+          Quero acessar o guia 🚀
+        </a>
+
+        <a href="#conteudo" class="btn btn-outline">
+          Ver conteúdo ↓
+        </a>
+      </div>
+
+      <div class="trust">
+        <span>✓ Conteúdo direto ao ponto</span>
+        <span>✓ Acesso pela Kiwify</span>
+      </div>
+    </div>
+
+    <div class="cover-wrap">
+      <!--
+        COLOQUE A CAPA DO EBOOK NA MESMA PASTA
+        DESTE HTML E RENOMEIE PARA:
+
+        capa-ebook.png
+      -->
+      <img
+        class="cover"
+        src="capa-ebook.png"
+        alt="Capa do ebook Mais Vendas na Kiwify"
+        onerror="this.style.display='none';document.getElementById('coverFallback').style.display='flex';">
+
+      <div id="coverFallback"
+           style="display:none; width:min(100%,410px); aspect-ratio:3/4; background:linear-gradient(145deg,#102c1b,#020604); border:1px solid #27f078; border-radius:8px; align-items:center; justify-content:center; text-align:center; padding:30px;">
+        <div>
+          <div style="font-size:13px;color:#27f078;font-weight:800;letter-spacing:2px;">MAIS VENDAS NA</div>
+          <div style="font-size:42px;font-weight:900;color:#27f078;line-height:1.1;margin:15px 0;">KIWIFY</div>
+          <p style="color:#fff;font-weight:700;">O guia prático para criar, divulgar e vender produtos digitais</p>
+          <p style="font-size:12px;color:#9aaea1;margin-top:20px;">Adicione sua capa no arquivo capa-ebook.png</p>
+        </div>
+      </div>
+
+      <div class="cover-note">
+        <strong>GUIA DIGITAL</strong><br>
+        Estratégias para começar
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="benefits" id="beneficios">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="eyebrow">O que você vai encontrar</div>
+      <h2>Conhecimento para dar os primeiros passos no digital.</h2>
+      <p>
+        Um material organizado para quem quer entender melhor
+        o mercado de produtos digitais e começar a agir.
+      </p>
+    </div>
+
+    <div class="benefit-grid">
+
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>Encontre seu nicho</h3>
+        <p>
+          Aprenda a identificar temas e oportunidades
+          para criar produtos digitais com mais direção.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💡</div>
+        <h3>Crie produtos digitais</h3>
+        <p>
+          Conheça ideias de ebooks, cursos, materiais
+          e outras possibilidades para o mercado digital.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Divulgue nas redes sociais</h3>
+        <p>
+          Entenda como planejar conteúdos, apresentar
+          ofertas e utilizar as redes para divulgação.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>Melhore sua estratégia</h3>
+        <p>
+          Organize suas ações, acompanhe métricas
+          e busque melhorias no seu processo.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🛒</div>
+        <h3>Conheça a Kiwify</h3>
+        <p>
+          Entenda o papel de uma plataforma de produtos
+          digitais e como ela pode fazer parte do seu projeto.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🚀</div>
+        <h3>Comece com mais clareza</h3>
+        <p>
+          Transforme ideias em próximos passos
+          e desenvolva sua presença no mercado digital.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="conteudo">
+  <div class="container learn-grid">
+
+    <div class="learn-copy">
+      <div class="eyebrow">Dentro do ebook</div>
+
+      <h2>O que você vai aprender?</h2>
+
+      <p>
+        O guia foi pensado para apresentar os fundamentos
+        de criar, divulgar e vender produtos digitais,
+        com explicações simples e práticas.
+      </p>
+
+      <ul class="check-list">
+        <li>Como escolher um nicho para trabalhar.</li>
+        <li>Ideias de produtos digitais para desenvolver.</li>
+        <li>Estratégias de divulgação nas redes sociais.</li>
+        <li>Como criar conteúdos e ganchos mais atrativos.</li>
+        <li>Como organizar sua jornada no digital.</li>
+      </ul>
+
+      <br>
+
+      <a href="https://pay.kiwify.com.br/AB78Kyc"
+         target="_blank"
+         rel="noopener"
+         class="btn">
+        Acessar o ebook →
+      </a>
+    </div>
+
+    <div class="modules">
+
+      <div class="module">
+        <div class="module-number">01</div>
+        <div>
+          <strong>Fundamentos do mercado digital</strong>
+          <small>Entenda o cenário e as possibilidades.</small>
+        </div>
+      </div>
+
+      <div class="module">
+        <div class="module-number">02</div>
+        <div>
+          <strong>Nichos e ideias de produtos</strong>
+          <small>Encontre uma direção para seu projeto.</small>
+        </div>
+      </div>
+
+      <div class="module">
+        <div class="module-number">03</div>
+        <div>
+          <strong>Criação e posicionamento</strong>
+          <small>Apresente seu produto com clareza.</small>
+        </div>
+      </div>
+
+      <div class="module">
+        <div class="module-number">04</div>
+        <div>
+          <strong>Divulgação e conteúdo</strong>
+          <small>Planeje ações para alcançar seu público.</small>
+        </div>
+      </div>
+
+      <div class="module">
+        <div class="module-number">05</div>
+        <div>
+          <strong>Próximos passos</strong>
+          <small>Organize sua estratégia e evolução.</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="oferta">
+  <div class="container">
+
+    <div class="offer-box">
+      <div class="eyebrow">Comece sua jornada</div>
+
+      <h2>Seu próximo passo no mercado digital começa aqui.</h2>
+
+      <p class="offer-description">
+        Tenha acesso ao guia prático para criar,
+        divulgar e vender produtos digitais.
+      </p>
+
+      <!--
+        ATUALIZE O PREÇO ABAIXO PARA O VALOR
+        REAL DO SEU PRODUTO NA KIWIFY.
+      -->
+
+      <div class="price-label">Acesso ao ebook</div>
+
+      <div class="price">
+        Consulte na Kiwify
+      </div>
+
+      <p class="price-note">
+        Pagamento e acesso realizados pela plataforma Kiwify.
+      </p>
+
+      <a href="https://pay.kiwify.com.br/AB78Kyc"
+         target="_blank"
+         rel="noopener"
+         class="btn">
+        QUERO MEU EBOOK AGORA →
+      </a>
+
+      <div class="secure">
+        🔒 Compra direcionada para o checkout oficial do produto.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="eyebrow">Dúvidas frequentes</div>
+      <h2>Perguntas sobre o ebook</h2>
+      <p>Confira algumas informações antes de acessar o produto.</p>
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>Para quem é este ebook?</summary>
+        <p>
+          Para iniciantes e pessoas que desejam aprender
+          mais sobre criação, divulgação e venda de produtos
+          digitais.
+        </p>
+      </details>
+
+      <details>
+        <summary>Preciso ter experiência para começar?</summary>
+        <p>
+          Não é necessário ter experiência prévia.
+          O guia apresenta conceitos e estratégias
+          de forma prática para quem está começando.
+        </p>
+      </details>
+
+      <details>
+        <summary>Como recebo o acesso ao produto?</summary>
+        <p>
+          Ao clicar no botão de compra, você será direcionado
+          para a página de checkout da Kiwify. As informações
+          de pagamento e entrega serão apresentadas por lá.
+        </p>
+      </details>
+
+      <details>
+        <summary>O ebook garante resultados ou vendas?</summary>
+        <p>
+          Não. O material apresenta estratégias e informações
+          para ajudar na sua preparação. Resultados dependem
+          de fatores como execução, público, produto e mercado.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-top">
+      <div>
+        <div class="logo">MAIS VENDAS <span>●</span></div>
+        <p>
+          Estratégias práticas para criar, divulgar
+          e vender produtos digitais.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#beneficios">Benefícios</a>
+        <a href="#conteudo">Conteúdo</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="https://pay.kiwify.com.br/AB78Kyc"
+           target="_blank"
+           rel="noopener">
+          Comprar
+        </a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 Mais Vendas na Kiwify. Todos os direitos reservados.</span>
+      <span>Produto digital independente.</span>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
